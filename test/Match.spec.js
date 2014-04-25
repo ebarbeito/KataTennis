@@ -9,4 +9,9 @@ describe('Match', function() {
     expect(match).toBeDefined();
   });
   
+  it('a match must have players', function() {
+    var match = new Match();
+    expect(match.players).toBeDefined();
+  });
+  
 });
