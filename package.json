@@ -1,0 +1,11 @@
+{
+  "name": "KataTennis",
+  "description": "This Kata is about implementing a simple tennis game.",
+  "version": "0.0.1",
+  "homepage": "http://github.com/ebarbeito/KataTennis/",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine-node": "~1.14.3"
+  }
+}
+
