@@ -21,8 +21,9 @@ describe('Match', function() {
   
   it('a match must have two players defined by user', function() {
     var match = new Match('Nadal', 'Pete Sampras');
-    expect(match.players[0]).toBe('Nadal');
-    expect(match.players[1]).toBe('Pete Sampras');
+    match.players.map(function(pj, i) {
+      expect(match.players[i]).toBe(pj);
+    });
   });
   
 });
