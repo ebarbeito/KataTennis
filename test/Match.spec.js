@@ -14,4 +14,9 @@ describe('Match', function() {
     expect(match.players).toBeDefined();
   });
   
+  it('a match must have two players', function() {
+    var match = new Match();
+    expect(match.players.length).toBe(2);
+  });
+  
 });
