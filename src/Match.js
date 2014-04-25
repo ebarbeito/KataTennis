@@ -1,3 +1,5 @@
+'use strict';
+
 function Match(player1, player2) {
   this.players = [
     {
