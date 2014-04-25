@@ -1,7 +1,7 @@
 function Match(player1, player2) {
   this.players = [
-    'Player 1',
-    'Player 2'
+    player1 || 'Player 1',
+    player2 || 'Player 2'
   ];
 }
 
