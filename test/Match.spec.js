@@ -16,4 +16,8 @@ describe('When a tennis match starts', function() {
     });
   });
   
+  it('both players has the same score at the beginning', function() {
+    expect(anonymousMatch.players[0].score).toBe(anonymousMatch.players[1].score);
+  });
+  
 });
