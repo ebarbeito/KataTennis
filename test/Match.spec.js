@@ -31,8 +31,8 @@ describe('When a tennis match starts', function() {
   });
   
   it('players have their own score, zero initialized', function() {
-    match.players.map(function(pj, i) {
-      expect(match.players[i].score).toBe(0);
+    match.players.map(function(pj) {
+      expect(pj.score).toBe(0);
     });
   });
   
