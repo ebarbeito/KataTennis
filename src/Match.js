@@ -1,15 +1,11 @@
 'use strict';
 
+var Player = require('./Player').Player;
+
 function Match(player1, player2) {
   this.players = [
-    {
-      name: player1 || 'Player 1',
-      score: 0
-    },
-    {
-      name: player2 || 'Player 2',
-      score: 0
-    }
+    new Player(player1 || 'Player 1'),
+    new Player(player2 || 'Player 2')
   ];
 }
 
