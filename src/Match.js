@@ -20,7 +20,8 @@ Match.prototype.addPoint = function(player) {
 };
 
 Match.prototype.isDeuce = function() {
-  return false;
+  return ScoreTypes.forty === this.players[0].score.value &&
+         ScoreTypes.forty === this.players[1].score.value ;
 };
 
 module.exports.Match = Match;
