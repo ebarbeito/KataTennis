@@ -14,6 +14,8 @@ function Match(player1, player2) {
 Match.prototype.addPoint = function(player) {
   if (ScoreTypes.forty === player.score.value) {
     this.winner = player;
+  } else {
+    player.addPoint();
   }
 };
 
