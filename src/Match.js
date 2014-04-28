@@ -12,8 +12,14 @@ function Match(player1, player2) {
 }
 
 Match.prototype.addPoint = function(player) {
+  var oponent = (JSON.stringify(player) !== JSON.stringify(this.players[0]) ? this.players[0] : this.players[1]);
+
   if (this.isDeuce()) {
-    player.score.advantage = true;
+    if (!oponent.score.isAdvantage()) {
+      player.score.advantage = true;
+    } else {
+      oponent.score.advantage = false;
+    }
   } else {
     if (ScoreTypes.forty === player.score.value) {
       this.winner = player;
