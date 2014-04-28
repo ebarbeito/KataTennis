@@ -1,12 +1,28 @@
 'use strict';
 
-var scores = require('../src/Score').scores;
+var ScoreTypes = require('../src/Score').ScoreTypes;
 
-describe('Score', function() {
+var allowedNames = ['love', 'fifty', 'thirty', 'forty'];
+var allowedValues = [0, 15, 30, 40];
+
+describe('Score types', function() {
+  var names;
+  var values;
   
-  it('score must be 0 or 15 or 30 or 40', function() {
-    var allowedScores = [0, 15, 30, 40];
-    expect(scores).toEqual(allowedScores);
+  beforeEach(function() {
+    names = Object.keys(ScoreTypes);
+    values = [];
+    for (var i in ScoreTypes) {
+        values.push(ScoreTypes[i]);
+    }
+  });
+  
+  it('score name must be love or fifty or thirty or forty', function() {
+    expect(names).toEqual(allowedNames);
+  });
+  
+  it('score value must be 0 or 15 or 30 or 40', function() {
+    expect(values).toEqual(allowedValues);
   });
   
 });

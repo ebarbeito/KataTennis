@@ -21,7 +21,7 @@ describe('When a player is created', function() {
   });
   
   it('player have their own score, zero initialized', function() {
-    expect(nadal.score).toBe(0);
+    expect(nadal.score.value).toBe(0);
   });
   
   describe('and a player wins, from love to fifty', function() {
@@ -31,7 +31,7 @@ describe('When a player is created', function() {
     });
     
     it('rafael nadal wins (fifty)', function() {
-      expect(nadal.score).toBe(15);
+      expect(nadal.score.value).toBe(15);
     });
     
     describe('and a player wins, from fifty to thirty', function() {
@@ -41,7 +41,7 @@ describe('When a player is created', function() {
       });
 
       it('rafael nadal wins (thirty)', function() {
-        expect(nadal.score).toBe(30);
+        expect(nadal.score.value).toBe(30);
       });
       
       describe('and a player wins, from fifty to forty', function() {
@@ -51,7 +51,7 @@ describe('When a player is created', function() {
         });
 
         it('rafael nadal wins (forty)', function() {
-          expect(nadal.score).toBe(40);
+          expect(nadal.score.value).toBe(40);
         });
 
       });

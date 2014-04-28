@@ -1,5 +1,16 @@
 'use strict';
 
-var scores = [0, 15, 30, 40];
+var ScoreTypes = {
+  love: 0,
+  fifty: 15,
+  thirty: 30,
+  forty: 40
+};
 
-module.exports.scores = scores;
+function Score() {
+  this.value = ScoreTypes.love;
+  return this;
+}
+
+module.exports.ScoreTypes = ScoreTypes;
+module.exports.Score = Score;

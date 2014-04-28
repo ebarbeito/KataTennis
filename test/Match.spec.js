@@ -1,7 +1,6 @@
 'use strict';
 
 var Match = require('../src/Match').Match;
-var scores = require('../src/Match').scores;
 
 describe('When a tennis match starts', function() {
   
@@ -18,7 +17,7 @@ describe('When a tennis match starts', function() {
   });
   
   it('both players have the same score at the beginning', function() {
-    expect(anonymousMatch.players[0].score).toBe(anonymousMatch.players[1].score);
+    expect(anonymousMatch.players[0].score.value).toBe(anonymousMatch.players[1].score.value);
   });
   
   it('both anonymous players have different names', function() {
