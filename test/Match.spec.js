@@ -24,4 +24,8 @@ describe('When a tennis match starts', function() {
     expect(anonymousMatch.players[0].name).not.toBe(anonymousMatch.players[1].name);
   });
   
+  it('there is no winner at the beginning', function() {
+    expect(anonymousMatch.winner).toBe(null);
+  });
+
 });
