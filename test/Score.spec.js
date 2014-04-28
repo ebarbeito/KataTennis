@@ -36,7 +36,11 @@ describe('Score', function() {
     score = new Score();
   });
   
-  it('a score can increment', function() {
+  it('a score can be initialized', function() {
+    expect(score.value.initialize()).toBe(ScoreTypes.love);
+  });
+  
+  it('a score can be incremented', function() {
     for(var type in ScoreTypes) {
       expect(score.value).toBe(ScoreTypes[type]);
       score.increment();
