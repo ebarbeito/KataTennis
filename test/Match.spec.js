@@ -29,3 +29,39 @@ describe('When a tennis match starts', function() {
   });
 
 });
+
+describe("when current game is Nadal:40, Sampras:30", function() {
+
+  var match;
+  var nadal;
+  var sampras;
+  
+  beforeEach(function() {
+    match = new Match('Rafael Nadal', 'Pete Sampras');
+    
+    // 'nadal' alias for player 1
+    nadal = match.players[0];
+    nadal.addPoint();
+    nadal.addPoint();
+    nadal.addPoint();
+    
+    // 'sampras' alias for player 0
+    sampras = match.players[1];
+    sampras.addPoint();
+    sampras.addPoint();
+  });
+
+  describe('and rafael nadal wins the game', function() {
+    var result;
+    
+    beforeEach(function() {
+      result = match.addPoint(nadal);
+    });
+    
+    it('Rafael Nadal wins the game', function() {
+      expect(match.winner).toEqual(nadal);
+    });
+    
+  });
+
+});
