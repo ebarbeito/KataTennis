@@ -70,6 +70,10 @@ describe("when a Nadal-Sampras tennis match starts", function() {
         expect(sampras.score.value).toEqual(ScoreTypes.love);
       });
 
+      it('The game isnt in deuce state', function() {
+        expect(match.isDeuce()).toBe(false);
+      });
+
       describe('and pete sampras wins the next three points', function() {
 
         beforeEach(function() {
@@ -86,7 +90,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
       });
 
     });
-    
+
   });
 
 });
