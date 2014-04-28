@@ -6,4 +6,8 @@ function Player(name) {
   return this;
 }
 
+Player.prototype.winPoint = function() {
+  this.score = 15;
+};
+
 module.exports.Player = Player;
