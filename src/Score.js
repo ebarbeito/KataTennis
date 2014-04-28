@@ -33,5 +33,9 @@ Score.prototype.increment = function() {
   }
 };
 
+Score.prototype.isAdvantage = function() {
+  return false;
+};
+
 module.exports.ScoreTypes = ScoreTypes;
 module.exports.Score = Score;

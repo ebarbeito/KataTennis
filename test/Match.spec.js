@@ -93,7 +93,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
         
         it('neither player has advantage in this deuce', function() {
           match.players.map(function(pj) {
-            expect(pj.score.advantage).toBe(false);
+            expect(pj.score.isAdvantage()).toBe(false);
           });
         });
         
@@ -112,7 +112,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
           });
           
           it('rafael nadal has advance in this deuce state', function() {
-            expect(nadal.score.advantage).toBe(true);
+            expect(nadal.score.isAdvantage()).toBe(true);
           });
 
         });
