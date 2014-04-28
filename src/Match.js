@@ -19,4 +19,8 @@ Match.prototype.addPoint = function(player) {
   }
 };
 
+Match.prototype.isDeuce = function() {
+  return false;
+};
+
 module.exports.Match = Match;

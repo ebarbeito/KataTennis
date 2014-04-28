@@ -70,7 +70,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
         expect(sampras.score.value).toEqual(ScoreTypes.love);
       });
 
-      it('The game isnt in deuce state', function() {
+      it('the game isnt in deuce state', function() {
         expect(match.isDeuce()).toBe(false);
       });
 
