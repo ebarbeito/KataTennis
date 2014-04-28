@@ -1,6 +1,7 @@
 'use strict';
 
 var Player = require('./Player').Player;
+var ScoreTypes = require('../src/Score').ScoreTypes;
 
 function Match(player1, player2) {
   this.players = [
@@ -11,7 +12,9 @@ function Match(player1, player2) {
 }
 
 Match.prototype.addPoint = function(player) {
-  this.winner = this.players[0];
+  if (ScoreTypes.forty === player.score.value) {
+    this.winner = player;
+  }
 };
 
 module.exports.Match = Match;
