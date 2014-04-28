@@ -2,7 +2,7 @@
 
 var ScoreTypes = {
   love: 0,
-  fifty: 15,
+  fifteen: 15,
   thirty: 30,
   forty: 40
 };
@@ -15,10 +15,10 @@ function Score() {
 Score.prototype.increment = function() {
   switch (this.value) {
     case ScoreTypes.love:
-      this.value = ScoreTypes.fifty;
+      this.value = ScoreTypes.fifteen;
       break;
 
-    case ScoreTypes.fifty:
+    case ScoreTypes.fifteen:
       this.value = ScoreTypes.thirty;
       break;
 

@@ -1,6 +1,7 @@
 'use strict';
 
 var Player = require('../src/Player').Player;
+var ScoreTypes = require('../src/Score').ScoreTypes;
 
 describe('When a player is created', function() {
   
@@ -21,37 +22,37 @@ describe('When a player is created', function() {
   });
   
   it('player have their own score, zero initialized', function() {
-    expect(nadal.score.value).toBe(0);
+    expect(nadal.score.value).toBe(ScoreTypes.love);
   });
   
-  describe('and a player wins, from love to fifty', function() {
+  describe('and a player wins, from love to fifteen', function() {
 
     beforeEach(function() {
       nadal.winPoint();
     });
     
-    it('rafael nadal wins (fifty)', function() {
-      expect(nadal.score.value).toBe(15);
+    it('rafael nadal wins (fifteen)', function() {
+      expect(nadal.score.value).toBe(ScoreTypes.fifteen);
     });
     
-    describe('and a player wins, from fifty to thirty', function() {
+    describe('and a player wins, from fifteen to thirty', function() {
       
       beforeEach(function() {
         nadal.winPoint();
       });
 
       it('rafael nadal wins (thirty)', function() {
-        expect(nadal.score.value).toBe(30);
+        expect(nadal.score.value).toBe(ScoreTypes.thirty);
       });
       
-      describe('and a player wins, from fifty to forty', function() {
+      describe('and a player wins, from thirty to forty', function() {
 
         beforeEach(function() {
           nadal.winPoint();
         });
 
         it('rafael nadal wins (forty)', function() {
-          expect(nadal.score.value).toBe(40);
+          expect(nadal.score.value).toBe(ScoreTypes.forty);
         });
 
       });

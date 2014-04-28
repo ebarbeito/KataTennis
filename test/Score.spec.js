@@ -3,7 +3,7 @@
 var Score = require('../src/Score').Score;
 var ScoreTypes = require('../src/Score').ScoreTypes;
 
-var allowedNames = ['love', 'fifty', 'thirty', 'forty'];
+var allowedNames = ['love', 'fifteen', 'thirty', 'forty'];
 var allowedValues = [0, 15, 30, 40];
 
 describe('Score types', function() {
@@ -18,7 +18,7 @@ describe('Score types', function() {
     }
   });
   
-  it('score name must be love or fifty or thirty or forty', function() {
+  it('score name must be love or fifteen or thirty or forty', function() {
     expect(names).toEqual(allowedNames);
   });
   
