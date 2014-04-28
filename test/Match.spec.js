@@ -70,6 +70,21 @@ describe("when a Nadal-Sampras tennis match starts", function() {
         expect(sampras.score.value).toEqual(ScoreTypes.love);
       });
 
+      describe('and pete sampras wins the next three points', function() {
+
+        beforeEach(function() {
+          match.addPoint(sampras);
+          match.addPoint(sampras);
+          match.addPoint(sampras);
+        });
+
+        it('Nadal:forty, Sampras:forty', function() {
+          expect(nadal.score.value).toEqual(ScoreTypes.forty);
+          expect(sampras.score.value).toEqual(ScoreTypes.forty);
+        });
+
+      });
+
     });
     
   });
