@@ -12,10 +12,14 @@ function Match(player1, player2) {
 }
 
 Match.prototype.addPoint = function(player) {
-  if (!this.isDeuce() && ScoreTypes.forty === player.score.value) {
-    this.winner = player;
+  if (this.isDeuce()) {
+    player.score.advantage = true;
   } else {
-    player.addPoint();
+    if (ScoreTypes.forty === player.score.value) {
+      this.winner = player;
+    } else {
+      player.addPoint();
+    }
   }
 };
 

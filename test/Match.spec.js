@@ -111,7 +111,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
             expect(match.isDeuce()).toBe(true);
           });
           
-          it('rafael nadal has advance in this deuce state', function() {
+          iit('rafael nadal has advance in this deuce state', function() {
             expect(nadal.score.isAdvantage()).toBe(true);
           });
 

@@ -34,7 +34,7 @@ Score.prototype.increment = function() {
 };
 
 Score.prototype.isAdvantage = function() {
-  return false;
+  return this.advantage;
 };
 
 module.exports.ScoreTypes = ScoreTypes;
