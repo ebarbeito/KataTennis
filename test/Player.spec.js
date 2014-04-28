@@ -43,6 +43,18 @@ describe('When a player is created', function() {
       it('rafael nadal wins (thirty)', function() {
         expect(nadal.score).toBe(30);
       });
+      
+      describe('and a player wins, from fifty to forty', function() {
+
+        beforeEach(function() {
+          nadal.winPoint();
+        });
+
+        it('rafael nadal wins (forty)', function() {
+          expect(nadal.score).toBe(40);
+        });
+
+      });
 
     });
 
