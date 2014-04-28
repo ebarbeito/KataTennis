@@ -15,6 +15,10 @@ Player.prototype.winPoint = function() {
     case 15:
       this.score = 30;
       break;
+    
+    case 30:
+      this.score = 40;
+      break;
   }
 };
 
