@@ -62,3 +62,21 @@ describe('When a player is created', function() {
   });
 
 });
+
+describe("when a player's score is forty", function() {
+
+  var nadal;
+  
+  beforeEach(function() {
+    nadal = new Player('Rafael Nadal');
+    nadal.winPoint(); // love to fifteen
+    nadal.winPoint(); // fifteen to thirty
+    nadal.winPoint(); // thirty to forty
+    nadal.winPoint(); // still forty!
+  });
+
+  it('rafael nadal has the highest score in this game', function() {
+    expect(nadal.score.value).toBe(ScoreTypes.forty);
+  });
+
+});
