@@ -16,7 +16,11 @@ Match.prototype.addPoint = function(player) {
 
   if (this.isDeuce()) {
     if (!oponent.score.isAdvantage()) {
-      player.score.advantage = true;
+      if (player.score.isAdvantage()) {
+        this.winner = player;
+      } else {
+        player.score.advantage = true;
+      }
     } else {
       oponent.score.advantage = false;
     }
