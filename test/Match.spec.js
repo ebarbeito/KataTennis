@@ -87,8 +87,14 @@ describe("when a Nadal-Sampras tennis match starts", function() {
           expect(sampras.score.value).toEqual(ScoreTypes.forty);
         });
 
-        it('The game is in deuce state', function() {
+        it('the game is in deuce state', function() {
           expect(match.isDeuce()).toBe(true);
+        });
+        
+        it('neither player has advantage in this deuce', function() {
+          match.players.map(function(pj) {
+            expect(pj.score.advantage).toBe(false);
+          });
         });
         
         describe('and rafael nadal wins the next point', function() {
@@ -101,7 +107,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
             expect(match.winner).toBe(null);
           });
           
-          it('The game is in deuce state', function() {
+          it('the game is in deuce state', function() {
             expect(match.isDeuce()).toBe(true);
           });
 
