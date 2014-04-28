@@ -33,6 +33,7 @@ describe('When a player is created', function() {
 
     it('rafael nadal wins (thirty)', function() {
       nadal.winPoint();
+      nadal.winPoint();
       expect(nadal.score).toBe(30);
     });
 

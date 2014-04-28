@@ -7,7 +7,15 @@ function Player(name) {
 }
 
 Player.prototype.winPoint = function() {
-  this.score = 15;
+  switch(this.score) {
+    case 0:
+      this.score = 15;
+      break;
+    
+    case 15:
+      this.score = 30;
+      break;
+  }
 };
 
 module.exports.Player = Player;
