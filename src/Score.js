@@ -13,6 +13,7 @@ function Score() {
 }
 
 Score.prototype.initialize = function() {
+  this.advantage = false;
   this.value = ScoreTypes.love;
 };
 
