@@ -8,7 +8,7 @@ function Player(name) {
   return this;
 }
 
-Player.prototype.winPoint = function() {
+Player.prototype.addPoint = function() {
   this.score.increment();
 };
 

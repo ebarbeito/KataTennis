@@ -28,7 +28,7 @@ describe('When a player is created', function() {
   describe('and a player wins, from love to fifteen', function() {
 
     beforeEach(function() {
-      nadal.winPoint();
+      nadal.addPoint();
     });
     
     it('rafael nadal wins (fifteen)', function() {
@@ -38,7 +38,7 @@ describe('When a player is created', function() {
     describe('and a player wins, from fifteen to thirty', function() {
       
       beforeEach(function() {
-        nadal.winPoint();
+        nadal.addPoint();
       });
 
       it('rafael nadal wins (thirty)', function() {
@@ -48,7 +48,7 @@ describe('When a player is created', function() {
       describe('and a player wins, from thirty to forty', function() {
 
         beforeEach(function() {
-          nadal.winPoint();
+          nadal.addPoint();
         });
 
         it('rafael nadal wins (forty)', function() {
@@ -69,10 +69,10 @@ describe("when a player's score is forty", function() {
   
   beforeEach(function() {
     nadal = new Player('Rafael Nadal');
-    nadal.winPoint(); // love to fifteen
-    nadal.winPoint(); // fifteen to thirty
-    nadal.winPoint(); // thirty to forty
-    nadal.winPoint(); // still forty!
+    nadal.addPoint(); // love to fifteen
+    nadal.addPoint(); // fifteen to thirty
+    nadal.addPoint(); // thirty to forty
+    nadal.addPoint(); // still forty!
   });
 
   it('rafael nadal has the highest score in this game', function() {
