@@ -10,4 +10,8 @@ function Match(player1, player2) {
   this.winner = null;
 }
 
+Match.prototype.addPoint = function(player) {
+  this.winner = this.players[0];
+};
+
 module.exports.Match = Match;
