@@ -100,6 +100,10 @@ describe("when a Nadal-Sampras tennis match starts", function() {
           it('there isnt a winner yet', function() {
             expect(match.winner).toBe(null);
           });
+          
+          it('The game is in deuce state', function() {
+            expect(match.isDeuce()).toBe(true);
+          });
 
         });
 
