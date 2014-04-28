@@ -24,4 +24,9 @@ describe('When a tennis match starts', function() {
     expect(anonymousMatch.players[0].name).not.toBe(anonymousMatch.players[1].name);
   });
   
+  it('score must be 0 or 15 or 30 or 40', function() {
+    var allowedScores = [0, 15, 30, 40];
+    expect(scores).toBe(allowedScores);
+  });
+  
 });
