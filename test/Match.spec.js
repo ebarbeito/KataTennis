@@ -1,6 +1,7 @@
 'use strict';
 
 var Match = require('../src/Match').Match;
+var scores = require('../src/Match').scores;
 
 describe('When a tennis match starts', function() {
   
@@ -26,7 +27,7 @@ describe('When a tennis match starts', function() {
   
   it('score must be 0 or 15 or 30 or 40', function() {
     var allowedScores = [0, 15, 30, 40];
-    expect(scores).toBe(allowedScores);
+    expect(scores).toEqual(allowedScores);
   });
   
 });
