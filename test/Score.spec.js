@@ -1,5 +1,6 @@
 'use strict';
 
+var Score = require('../src/Score').Score;
 var ScoreTypes = require('../src/Score').ScoreTypes;
 
 var allowedNames = ['love', 'fifty', 'thirty', 'forty'];
@@ -23,6 +24,23 @@ describe('Score types', function() {
   
   it('score value must be 0 or 15 or 30 or 40', function() {
     expect(values).toEqual(allowedValues);
+  });
+  
+});
+
+describe('Score', function() {
+  
+  var score;
+  
+  beforeEach(function() {
+    score = new Score();
+  });
+  
+  it('a score can increment', function() {
+    for(var type in ScoreTypes) {
+      expect(score.value).toBe(ScoreTypes[type]);
+      score.increment();
+    }
   });
   
 });
