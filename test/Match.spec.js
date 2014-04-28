@@ -111,12 +111,34 @@ describe("when a Nadal-Sampras tennis match starts", function() {
             expect(match.isDeuce()).toBe(true);
           });
           
-          iit('rafael nadal has advance in this deuce state', function() {
+          it('rafael nadal has advance in this deuce state', function() {
             expect(nadal.score.isAdvantage()).toBe(true);
+          });
+          
+          describe('and pete sampras wins the next point', function() {
+
+            beforeEach(function() {
+              match.addPoint(sampras);
+            });
+
+            it('there isnt a winner yet', function() {
+              expect(match.winner).toBe(null);
+            });
+
+            it('the game is in deuce state', function() {
+              expect(match.isDeuce()).toBe(true);
+            });
+
+            it('neither player has advantage in this deuce', function() {
+              match.players.map(function(pj) {
+                expect(pj.score.isAdvantage()).toBe(false);
+              });
+            });
+
           });
 
         });
-
+        
       });
 
     });
