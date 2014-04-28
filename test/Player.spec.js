@@ -24,17 +24,26 @@ describe('When a player is created', function() {
     expect(nadal.score).toBe(0);
   });
   
-  describe('and a player wins game points', function() {
+  describe('and a player wins, from love to fifty', function() {
 
-    it('rafael nadal wins (fifty)', function() {
+    beforeEach(function() {
       nadal.winPoint();
+    });
+    
+    it('rafael nadal wins (fifty)', function() {
       expect(nadal.score).toBe(15);
     });
+    
+    describe('and a player wins, from fifty to thirty', function() {
+      
+      beforeEach(function() {
+        nadal.winPoint();
+      });
 
-    it('rafael nadal wins (thirty)', function() {
-      nadal.winPoint();
-      nadal.winPoint();
-      expect(nadal.score).toBe(30);
+      it('rafael nadal wins (thirty)', function() {
+        expect(nadal.score).toBe(30);
+      });
+
     });
 
   });
