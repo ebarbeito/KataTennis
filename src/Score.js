@@ -12,5 +12,21 @@ function Score() {
   return this;
 }
 
+Score.prototype.increment = function() {
+  switch (this.value) {
+    case ScoreTypes.love:
+      this.value = ScoreTypes.fifty;
+      break;
+
+    case ScoreTypes.fifty:
+      this.value = ScoreTypes.thirty;
+      break;
+
+    case ScoreTypes.thirty:
+      this.value = ScoreTypes.forty;
+      break;
+  }
+};
+
 module.exports.ScoreTypes = ScoreTypes;
 module.exports.Score = Score;
