@@ -52,10 +52,9 @@ describe("when current game is Nadal:40, Sampras:30", function() {
   });
 
   describe('and rafael nadal wins the game', function() {
-    var result;
     
     beforeEach(function() {
-      result = match.addPoint(nadal);
+      match.addPoint(nadal);
     });
     
     it('Rafael Nadal wins the game', function() {
@@ -88,10 +87,8 @@ describe("when current game is Nadal:30, Sampras:40", function() {
   });
 
   describe('and pete sampras wins the game', function() {
-    var result;
-    
     beforeEach(function() {
-      result = match.addPoint(sampras);
+      match.addPoint(sampras);
     });
     
     it('Pete Sampras wins the game', function() {
