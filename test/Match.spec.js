@@ -87,6 +87,10 @@ describe("when a Nadal-Sampras tennis match starts", function() {
           expect(sampras.score.value).toEqual(ScoreTypes.forty);
         });
 
+        it('The game is in deuce state', function() {
+          expect(match.isDeuce()).toBe(true);
+        });
+
       });
 
     });
