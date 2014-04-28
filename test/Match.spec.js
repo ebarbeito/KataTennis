@@ -1,6 +1,7 @@
 'use strict';
 
 var Match = require('../src/Match').Match;
+var ScoreTypes = require('../src/Score').ScoreTypes;
 
 describe('When a tennis match starts', function() {
   
@@ -26,6 +27,36 @@ describe('When a tennis match starts', function() {
   
   it('there is no winner at the beginning', function() {
     expect(anonymousMatch.winner).toBe(null);
+  });
+
+});
+
+describe("when a Nadal-Sampras tennis match starts", function() {
+
+  var match;
+  var nadal;
+  var sampras;
+  
+  beforeEach(function() {
+    match = new Match('Rafael Nadal', 'Pete Sampras');
+    
+    // 'nadal' alias for player 1
+    nadal = match.players[0];
+    
+    // 'sampras' alias for player 0
+    sampras = match.players[1];
+  });
+
+  describe('and rafael nadal wins the point', function() {
+    
+    beforeEach(function() {
+      match.addPoint(nadal);
+    });
+    
+    it('Nadal:fifteen, Sampras:love', function() {
+      expect(nadal.score.value).toEqual(ScoreTypes.fifteen);
+    });
+    
   });
 
 });
