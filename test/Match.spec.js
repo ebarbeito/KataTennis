@@ -90,6 +90,18 @@ describe("when a Nadal-Sampras tennis match starts", function() {
         it('The game is in deuce state', function() {
           expect(match.isDeuce()).toBe(true);
         });
+        
+        describe('and rafael nadal wins the next point', function() {
+
+          beforeEach(function() {
+            match.addPoint(nadal);
+          });
+
+          it('there isnt a winner yet', function() {
+            expect(match.winner).toBe(null);
+          });
+
+        });
 
       });
 
