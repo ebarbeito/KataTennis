@@ -37,7 +37,8 @@ describe('Score', function() {
   });
   
   it('a score can be initialized', function() {
-    expect(score.value.initialize()).toBe(ScoreTypes.love);
+    score.initialize();
+    expect(score.value).toBe(ScoreTypes.love);
   });
   
   it('a score can be incremented', function() {

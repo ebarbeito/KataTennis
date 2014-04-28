@@ -8,9 +8,13 @@ var ScoreTypes = {
 };
 
 function Score() {
-  this.value = ScoreTypes.love;
+  this.initialize();
   return this;
 }
+
+Score.prototype.initialize = function() {
+  this.value = ScoreTypes.love;
+};
 
 Score.prototype.increment = function() {
   switch (this.value) {
