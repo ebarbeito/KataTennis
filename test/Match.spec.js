@@ -55,6 +55,7 @@ describe("when a Nadal-Sampras tennis match starts", function() {
     
     it('Nadal:fifteen, Sampras:love', function() {
       expect(nadal.score.value).toEqual(ScoreTypes.fifteen);
+      expect(sampras.score.value).toEqual(ScoreTypes.love);
     });
     
   });
