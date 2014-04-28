@@ -134,6 +134,19 @@ describe("when a Nadal-Sampras tennis match starts", function() {
                 expect(pj.score.isAdvantage()).toBe(false);
               });
             });
+            
+            describe('and rafael nadal wins the next two points!', function() {
+
+              beforeEach(function() {
+                match.addPoint(nadal);
+                match.addPoint(nadal);
+              });
+
+              it('Rafael Nadal wins the game', function() {
+                expect(match.winner).toEqual(nadal);
+              });
+
+            });
 
           });
 
