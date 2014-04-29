@@ -145,6 +145,16 @@ describe("when a Nadal-Sampras tennis match starts", function() {
               it('Rafael Nadal wins the game', function() {
                 expect(match.winner).toEqual(nadal);
               });
+              
+              describe('and there is a winner', function() {
+
+                it("the players' score is initialized", function() {
+                  match.players.map(function(pj) {
+                    expect(pj.score.value).toBe(ScoreTypes.love);
+                  });
+                });
+
+              });
 
             });
 
