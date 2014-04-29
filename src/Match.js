@@ -12,7 +12,15 @@ function Match(player1, player2) {
 }
 
 Match.prototype.addPoint = function(player) {
-  var oponent = (JSON.stringify(player) !== JSON.stringify(this.players[0]) ? this.players[0] : this.players[1]);
+  var strPlayer = JSON.stringify(player);
+  var strPlayer1 = JSON.stringify(this.players[0]);
+  var strPlayer2 = JSON.stringify(this.players[1]);
+  
+  if (strPlayer !== strPlayer1 && strPlayer !== strPlayer2) {
+    throw new Error('Ilegal player');
+  }
+  
+  var oponent = (strPlayer !== strPlayer1 ? this.players[0] : this.players[1]);
 
   if (this.isDeuce()) {
     if (!oponent.score.isAdvantage()) {
