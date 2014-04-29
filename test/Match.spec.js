@@ -1,6 +1,7 @@
 'use strict';
 
 var Match = require('../src/Match').Match;
+var Player = require('../src/Player').Player;
 var ScoreTypes = require('../src/Score').ScoreTypes;
 
 describe('When a tennis match starts', function() {
@@ -45,6 +46,19 @@ describe("when a Nadal-Sampras tennis match starts", function() {
     
     // 'sampras' alias for player 0
     sampras = match.players[1];
+  });
+  
+  describe('and no other player can play the match', function() {
+    var ilegalPlayer;
+    
+    beforeEach(function() {
+      ilegalPlayer = new Player('Ilegal player');
+    });
+    
+    it('ilegal player cant add points to this match', function() {
+      expect(function(){ match.addPoint(ilegalPlayer) }).toThrow(new Error('Ilegal player'));
+    });
+    
   });
 
   describe('and rafael nadal wins the point', function() {
