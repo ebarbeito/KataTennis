@@ -31,6 +31,11 @@ Match.prototype.addPoint = function(player) {
       player.addPoint();
     }
   }
+  
+  if (this.winner) {
+    oponent.score.initialize();
+    player.score.initialize();
+  }
 };
 
 Match.prototype.isDeuce = function() {
