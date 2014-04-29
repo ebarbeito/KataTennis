@@ -23,21 +23,9 @@ Match.prototype.addPoint = function(player) {
   var oponent = (strPlayer !== strPlayer1 ? this.players[0] : this.players[1]);
 
   if (this.isDeuce()) {
-    if (!oponent.score.isAdvantage()) {
-      if (player.score.isAdvantage()) {
-        this.winner = player;
-      } else {
-        player.score.advantage = true;
-      }
-    } else {
-      oponent.score.advantage = false;
-    }
+    this.resolveAdvantage(player, oponent);
   } else {
-    if (ScoreTypes.forty === player.score.value) {
-      this.winner = player;
-    } else {
-      player.addPoint();
-    }
+    this.resolvePoint(player);
   }
   
   if (this.winner) {
@@ -48,7 +36,27 @@ Match.prototype.addPoint = function(player) {
 
 Match.prototype.isDeuce = function() {
   return ScoreTypes.forty === this.players[0].score.value &&
-         ScoreTypes.forty === this.players[1].score.value ;
+         ScoreTypes.forty === this.players[1].score.value;
+};
+
+Match.prototype.resolveAdvantage = function(player, oponent) {
+  if (!oponent.score.isAdvantage()) {
+    if (!player.score.isAdvantage()) {
+      player.score.advantage = true;
+    } else {
+      this.winner = player;
+    }
+  } else {
+    oponent.score.advantage = false;
+  }
+};
+
+Match.prototype.resolvePoint = function(player) {
+  if (ScoreTypes.forty === player.score.value) {
+    this.winner = player;
+  } else {
+    player.addPoint();
+  }
 };
 
 module.exports.Match = Match;
